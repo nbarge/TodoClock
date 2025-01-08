@@ -1,0 +1,146 @@
+/**
+* Modal Grid.
+**/
+
+#modal-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: black;
+  width: 100%;
+  height: 100%;
+}
+
+#modal-content-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+#modal-title {
+  font-size: 22px;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+#modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-self: right;
+  align-self: center;
+  padding-top: 2em;
+}
+
+/**
+* Color Picker Title.
+**/
+
+.color-picker-row,
+.color-picker-row label  {
+  display: block;
+  padding-bottom: 15px;
+}
+
+/**
+* Title Input.
+**/
+
+.title-input-row {
+  border-bottom: 1px solid rgb(247, 247, 247);
+
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.title-input-row label,
+.title-input-row input {
+  display: flex;
+  width: 100%;
+}
+
+.title-input-row label {
+  padding-bottom: 15px;
+}
+
+.title-input-row input,
+.title-input-row input:focus {
+  border: none;
+  box-shadow: none;
+  font-size: 2em;
+  outline: 0;
+}
+
+.title-input-row .input-error {
+  color: #ffffff;
+  background: red;
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin-top: 5px;
+  font-weight: 800;
+  position: absolute;
+  right: 20px; ;
+}
+
+/**
+* Number Picker.
+**/
+
+.picker-container-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.picker-container-row .picker-start,
+.picker-container-row .picker-duration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.picker-container-row .picker-row {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  width: 100%;
+}
+
+.picker-container-row .picker-row label {
+  padding-bottom: 15px;
+}
+
+.picker-container-row .picker-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+* Modal Buttons.
+**/
+
+.modal-submit-button,
+.modal-close-button {
+  background-color: #e5e5e5;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.modal-submit-button {
+  background-color: rgb(255,255,46);
+}
+
+.modal-submit-button:hover,
+.modal-close-button:hover {
+  opacity: 0.8;
+}

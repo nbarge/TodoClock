@@ -1,0 +1,16 @@
+<div id="todo-clock-control">
+	<div>
+		<button type="button" [class]="getClass('AM')" (click)="changeDaytime('AM')">
+		AM
+		</button>
+		<button type="submit" [class]="getClass('PM')" (click)="changeDaytime('PM')">
+		PM
+		</button>
+		<button type="submit" [class]="getClass('descriptionActivated')" (click)="toggleDescription()">
+			<i class="fa fa-tag fa-1x" aria-hidden="true"></i>
+		</button>
+		<button type="submit" [class]="getClass('soundActivated')" (click)="toggleSound()">
+			<i class="fa fa-volume-up fa-1x" aria-hidden="true"></i>
+		</button>
+	</div>
+</div>

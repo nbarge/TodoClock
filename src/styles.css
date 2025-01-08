@@ -1,0 +1,371 @@
+/* 
+ * General styling.
+ */
+
+html,
+body {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  color: #4d4d4d;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-weight: 300;
+  /*background: url('assets/background_image.jpg')  no-repeat center center fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+
+button,
+button:focus,
+input[type="checkbox"] {
+  outline: none;
+  box-shadow: none;
+}
+
+.hidden {
+  display: none;
+}
+
+select {
+  font-style: italic;
+  font-weight: 300;
+  color: #e6e6e6;
+  width: 100%;
+  height: 3em;
+  border: 0;
+  color: #000000;
+  font-size: 1em;
+}
+
+svg {
+  stroke-width: 0;
+  stroke: #000;
+}
+
+path {
+  transition: fill 250ms linear;
+  transition-delay: 150ms;
+}
+
+path:hover {
+  transition-delay: 0;
+}
+
+/* 
+ * Main Container styling.
+ */
+
+#main_container { 
+  max-width: 100%; 
+  margin: 40px 0;
+}
+
+#main_container .main_container_padding { 
+  padding: 0; 
+  background: #FFFFFF; 
+}
+
+#main_container .main_container_padding .todoapp { 
+  margin-top: 0;
+}
+
+/*
+* Control panel styling.
+* `todo-clock-control`
+*/
+
+#todo-clock-control { 
+  width: 100%; 
+  background: #e0e0e0; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.todo-clock-control-button {
+  border: 0;
+  border-radius: 0px;
+  cursor: pointer;
+  display: inline-block;
+  width: 25%;
+  font-family: inherit;
+  line-height: 1em;
+  margin: 0 0 0 0em;
+  padding: .75em 2em;
+  outline: none;
+}
+
+.todo-clock-control-button:focus {
+  -webkit-animation: ngdialog-pulse 1.1s infinite;
+  animation: ngdialog-pulse 1.1s infinite;
+  outline: none;
+  box-shadow: none;
+}
+
+.todo-clock-control-button.todo-clock-control-button-primary {
+  background: #000000;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.todo-clock-control-button.todo-clock-control-button-secondary {
+  background: #e0e0e0;
+  color: #777;
+}
+
+/*
+* Clock SVG-Canvas styling.
+* `todo-clock-chart`
+*/
+
+/* chart container and svg canvas */
+#todo-clock-chart { 
+  display: flex;
+  justify-content: center;
+  text-align: center; 
+
+  background: none;
+  -webkit-user-select: none;      
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#todo-clock-chart svg {
+  padding: 0;
+  text-align: center; 
+  justify-content: center;
+}
+
+/* Inner clock circle with text. */
+#todo-clock-chart .inner-circle { 
+  stroke-width: 0; 
+  fill: #000000; 
+}
+
+#todo-clock-chart .inner-circle-time {
+  font-size: 3em; 
+  fill: #FFFFFF;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#todo-clock-chart .inner-circle-desc-top, 
+#todo-clock-chart .inner-circle-desc-bottom {
+  font-size: 1em; 
+  fill: #FFFFFF;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Clock tick stripes around inner circle. */
+#todo-clock-chart .clock-second-tick {
+  stroke-width: 2;
+  fill: #000;
+}
+
+#todo-clock-chart .clock-hour-tick {
+  stroke-width: 2;
+}
+
+#todo-clock-chart .clock-hour-label {
+  font-size: 12px;
+}
+
+/* Clock progress around clock tick stripes. */
+#todo-clock-chart .time-progress-meter .background {
+  fill: #ccc;
+  fill-opacity: 0.5;
+}
+#todo-clock-chart .time-progress-meter .foreground {
+  fill: #000;
+  fill-opacity: 1;
+}
+
+/* Todo circle AM background. */
+#todo-clock-chart .todo-circ-background-am .background {
+  fill: #CCC;
+  fill-opacity: 0.5;
+}
+
+/* Todo circle PM background. */
+#todo-clock-chart .todo-circ-background-pm .background {
+  fill: #CCC;
+  fill-opacity: 0.5;
+}
+
+/* Divider between AM and PM circle. */
+#todo-clock-chart .todo-circ-border {
+  fill: #FFF;
+}
+
+/* Temporary circle on mousemove.  */
+.tmp-mouse-move-circ { 
+  stroke: #FFFFFF; 
+  stroke-width: 1; 
+  fill: #CCC;
+}
+
+.tmp-mouse-move-circ:hover { 
+  stroke: #FFFFFF; 
+  stroke-width: 1; 
+  cursor: no-drop; 
+  fill: #CCC;
+}
+
+/* 
+ * Overwrite basic todomvc styling.
+ */
+
+ app-todo-item {
+  display: block;
+  border-bottom: 1px solid #ededed;
+}
+
+app-todo-item:last-child {
+  border-bottom: none;
+}
+
+/* Toggle All Icon. */
+.toggle-all-modified {
+	width: 45px;
+	height: 65px;
+	border: none; /* Mobile Safari */
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	bottom: 100%;
+  z-index: 1;
+}
+
+.toggle-all-modified + .toggle-all-label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 45px;
+	height: 65px;
+	font-size: 0;
+	position: absolute;
+	top: -65px;
+	left: -0;
+  z-index: 0;
+}
+
+.toggle-all-modified + .toggle-all-label:before {
+	content: '❯';
+	display: inline-block;
+	font-size: 22px;
+	color: #949494;
+	padding: 10px 27px 10px 27px;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.toggle-all-modified:checked + label:before {
+	color: #484848;
+}
+
+.toggle-all-modified:checked + label:before {
+	color: #484848;
+}
+
+/* Message, no todos available. */
+.todo-list.no-todos {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 1.2em;
+}
+
+/* Todo list. */
+.todo-list li.editing {
+  padding-left: 60px;
+}
+
+.todo-list li.editing .edit {
+	display: block;
+	width: calc(100% - 43px);
+	padding: 12px 16px;
+
+	margin: 0 0 0 43px;
+}
+
+/* Todo items with toggle single element. */
+.todo-list li .toggle-modified {
+	text-align: center;
+	width: 40px;
+	/* auto, since non-WebKit browsers doesn't support input styling */
+	height: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	border: none; /* Mobile Safari */
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.todo-list li .toggle-modified {
+	opacity: 0;
+}
+
+.todo-list li .toggle-modified + .time + label {
+	/*
+		Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
+		IE and Edge requires *everything* to be escaped to render, so we do that instead of just the `#` - https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7157459/
+	*/
+	background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23949494%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+
+.todo-list li .toggle-modified:checked + .time + label {
+	background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%2359A193%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20fill%3D%22%233EA390%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22%2F%3E%3C%2Fsvg%3E');
+}
+
+.todo-list li label {
+  padding-left: 120px;
+}
+.todo-list li .time {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 60px;
+  font-size: 0.5em;
+}
+
+.todo-list li .color-bar {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0.1) 1px, rgba(255,255,255,0) 1px);
+  box-shadow: -1px 0 2px rgba(0, 0, 0, 0.0);
+}
+
+.toggle-all {
+  position: relative;
+}

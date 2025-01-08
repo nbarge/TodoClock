@@ -1,0 +1,24 @@
+<li [class.completed]="todo.completed" [class.editing]="isEditing">
+  <div class="view">
+
+      <input class="toggle-modified" type="checkbox" (click)="toggleTodo()" [checked]="todo.completed" />
+      <div class="time">
+        {{ getHours(todo.from) }}:{{ getMinutes(todo.from) }}<br>
+        {{ getHours(todo.duration) }}h {{ getMinutes(todo.duration) }}m
+      </div>
+      <label (dblclick)="startEdit()">{{ todo.title }}</label>
+      
+      <button class="destroy" (click)="removeTodo()"></button>
+
+      <div class="color-bar" [style.background-color]="todo.color"></div>
+  </div>
+  @if (isEditing) {
+    <div class="input-container">
+        <input #todoInputRef class="edit" id="edit-todo-input"
+          [(ngModel)]="title"
+          (focus)="handleFocus($event)"
+          (blur)="handleBlur($event)"
+          (keyup.enter)="updateTodo()" />
+    </div>
+  }
+</li>
