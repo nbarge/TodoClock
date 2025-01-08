@@ -40,7 +40,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/todo-clock",
+            "outputPath": {
+              "base": "dist/TodoClock",
+              "browser": ""
+            },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,9 +62,6 @@
               "node_modules/todomvc-app-css/index.css",
               "node_modules/todomvc-common/base.css",
               "src/styles.css"
-            ],
-            "scripts": [
-              "node_modules/todomvc-common/base.js"
             ]
           },
           "configurations": {
