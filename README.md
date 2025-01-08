@@ -8,6 +8,10 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 TodoClock is an interactive application that combines time management with task tracking. Using a visual clock interface, you can manage and track your to-dos within specific time ranges. Create, edit, and categorize tasks, mark them as completed, and track your progress. With customizable features such as AM/PM toggling, tag visibility, and sound notifications, it offers an intuitive way to stay organized and productive.
 
+## Demo
+
+[View Demo](https://nbarge.github.io/TodoClock/)
+
 ## Screenshot
 
 ![TodoClock Screenshot](./public/screenshot.jpg)
